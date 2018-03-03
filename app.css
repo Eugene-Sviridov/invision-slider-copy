@@ -1,0 +1,268 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.video-slider * {
+    box-sizing: border-box;
+}
+
+.video-slider__list {
+    position: relative;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    height: 700px;
+    overflow: hidden;
+}
+
+.video-slider__item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translateY(700px);
+    transition: transform 0s ease .4s;
+    z-index: 0;
+    background-color: #000;
+}
+
+.video-slider__item._active {
+    transform: translateY(0);
+    z-index: 1;
+    transition: transform .4s ease;
+}
+
+.video-slider__item._content-hidden .video-slider__item-content {
+    opacity: 0;
+}
+
+.video-slider__item-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    transition: opacity .4s ease;
+}
+
+.video-slider__item-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.video-slider__item-video {
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+}
+
+.video-slider__item-img img {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.video-slider__item-title {
+    position: relative;
+    font-size: 2.5em;
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.6;
+    letter-spacing: .02em;
+    color: #fff;
+    font-style: italic;
+    font-weight: 300;
+    max-width: 850px;
+}
+
+.video-slider__item-author {
+    position: relative;
+    font-size: .875em;
+    margin-top: 3.14286em;
+    font-family: brandon-grotesque, sans-serif;
+    text-transform: uppercase;
+    color: #939da5;
+    letter-spacing: .15em;
+    font-weight: 500;
+}
+
+.video-slider__item-btn {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-top: 3.625em; 
+    cursor: pointer;
+    transition: opacity .25s ease-in-out;
+}
+
+.video-slider__item-btn:hover {
+    opacity: .8;
+}
+
+.video-slider__item-btn:after {
+    position: absolute;
+    display: block;
+    content: '';
+    top: 50%;
+    left: calc(50% + 5px);
+    transform: translate(-50%, -50%);
+    border: 8px solid transparent;
+    border-left: 10px solid #999;
+}
+
+.video-slider__item-btn:focus {
+    outline: none;
+}
+
+.video-slider__people {
+    position: relative;
+    top: -50px; /* half of image height */
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    z-index: 2;
+}
+
+.video-slider__people._video-open .video-slider__person:nth-child(1) {
+    transform: matrix(0.75, 0, 0, 0.75, 60, 45);
+    transition: transform .25s ease-in-out 0s;
+}
+.video-slider__people._video-open .video-slider__person:nth-child(2) {
+    transform: matrix(0.75, 0, 0, 0.75, 30, 45);
+    transition: transform .25s ease-in-out .1s;
+}
+.video-slider__people._video-open .video-slider__person:nth-child(3) {
+    transform: matrix(0.75, 0, 0, 0.75, 0, 45);
+    transition: transform .25s ease-in-out .2s;
+}
+.video-slider__people._video-open .video-slider__person:nth-child(4) {
+    transform: matrix(0.75, 0, 0, 0.75, -30, 45);;
+    transition: transform .25s ease-in-out .3s;
+}
+.video-slider__people._video-open .video-slider__person:nth-child(5) {
+    transform: matrix(0.75, 0, 0, 0.75, -60, 45);
+    transition: transform .25s ease-in-out .4s;
+}
+
+.video-slider__people .video-slider__person:nth-child(1) .video-slider__person-photo {
+    background-position: 0 -2245px;
+}
+.video-slider__people .video-slider__person:nth-child(2) .video-slider__person-photo {
+    background-position: 0 -2485px;
+}
+.video-slider__people .video-slider__person:nth-child(3) .video-slider__person-photo {
+    background-position: 0 -2365px;
+}
+.video-slider__people .video-slider__person:nth-child(4) .video-slider__person-photo {
+    background-position: 0 -2605px;
+}
+.video-slider__people .video-slider__person:nth-child(5) .video-slider__person-photo {
+    background-position: 0 -2125px;
+}
+
+.video-slider__people .video-slider__person:nth-child(1) .video-slider__person-logo { 
+    background-position: 0 -2887px;
+    height: 21px;
+    width: 85px;
+}
+.video-slider__people .video-slider__person:nth-child(2) .video-slider__person-logo {
+    background-position: 0 -2962px;
+    height: 19px;
+    width: 23px;
+}
+.video-slider__people .video-slider__person:nth-child(3) .video-slider__person-logo {
+    background-position: 0 -2928px;
+    height: 14px;
+    width: 53px;
+}
+.video-slider__people .video-slider__person:nth-child(4) .video-slider__person-logo {
+    background-position: 0 -3001px;
+    height: 11px;
+    width: 50px;
+}
+.video-slider__people .video-slider__person:nth-child(5) .video-slider__person-logo {
+    background-position: 0 -2845px;
+    height: 22px;
+    width: 89px;
+}
+
+.video-slider__person {
+    cursor: pointer;
+    margin: 0 3px;
+}
+
+.video-slider__person._active .video-slider__person-photo:before,
+.video-slider__person._active .video-slider__person-photo:after {
+    opacity: 0;
+}
+
+.video-slider__person-photo {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #fff;
+    overflow: hidden;
+    border-radius: 50%;
+    background-image: url('https://www.invisionapp.com/assets/img/sprites/home-sf40e21de30.png');
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    transform: scale(.75);
+}
+
+.video-slider__person-photo:hover:before,
+.video-slider__person-photo:hover:after {
+    opacity: 0;
+}
+
+.video-slider__person-photo:before {
+    position: absolute;
+    display: block;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    opacity: .3;
+    pointer-events: none;
+    transition: opacity .3s ease;
+}
+
+.video-slider__person-photo:after {
+    position: absolute;
+    display: block;
+    content: '';
+    top: 50%;
+    left: calc(50% + 5px);
+    transform: translate(-50%, -50%);
+    border: 8px solid transparent;
+    border-left: 10px solid #fff;
+    transition: opacity .3s ease;
+}
+
+.video-slider__person-logo {
+    background-image: url('https://www.invisionapp.com/assets/img/sprites/home-sf40e21de30.png');
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
