@@ -35,8 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     slider.classList.add('_active');
                 } else {
                     slider.classList.remove('_active');
-                    videoPlayers[index].pause();
-                    videoPlayers[index].setCurrentTime(0);
+                    videoPlayers[index].unload();
                     
                 }
                 slider.classList.remove('_content-hidden');
