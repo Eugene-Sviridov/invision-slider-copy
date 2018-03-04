@@ -8,6 +8,11 @@ body {
     box-sizing: border-box;
 }
 
+.video-slider input:focus,
+.video-slider button:focus {
+    outline: none;
+}
+
 .video-slider__list {
     position: relative;
     font-size: 16px;
@@ -16,6 +21,19 @@ body {
     list-style-type: none;
     height: 700px;
     overflow: hidden;
+}
+
+@media only screen and (max-width: 1024px) {
+    .video-slider__list {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .video-slider__list {
+        height: 468px;
+        font-size: 10px;
+    }
 }
 
 .video-slider__item {
@@ -68,6 +86,55 @@ body {
     pointer-events: none;
 }
 
+.video-slider__item-video-btn {
+    position: absolute;
+    left: calc(50% + ((700px * 16 / 9) / 2) - 21px - 10px);
+    top: 10px;
+    transform: translateX(-50%);
+    width: 42px;
+    height: 42px;
+    background-color: rgba(255, 255, 2555, 0);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    z-index: -1;
+}
+
+@media only screen and (max-width: 1244px) {
+    .video-slider__item-video-btn {
+        left: auto;
+        right: 10px;
+        transform: none;
+    }
+}
+
+.video-slider__item-video-btn:hover {
+    background-color: rgba(255, 255, 2555, .5);
+}
+
+.video-slider__item-video-btn:after,
+.video-slider__item-video-btn:before {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 1px;
+    height: 20px;
+    left: 50%;
+    top: 50%;
+    background-color: #fff;
+    transform-origin: top;
+}
+
+.video-slider__item-video-btn:before {
+    transform: rotate(-45deg) translate(-50%, -50%);
+}
+
+.video-slider__item-video-btn:after {
+    transform: rotate(45deg) translate(-50%, -50%);
+}
+
+
+
 .video-slider__item-video {
     position: absolute;
     height: 100%;
@@ -97,6 +164,7 @@ body {
     font-style: italic;
     font-weight: 300;
     max-width: 850px;
+    padding: 0 20px;
 }
 
 .video-slider__item-author {
@@ -153,6 +221,9 @@ body {
 
 .video-slider._video-open .video-slider__people {
     pointer-events: none;
+}
+.video-slider._video-open .video-slider__item-video-btn {
+    z-index: 0;
 }
 
 .video-slider._video-open .video-slider__item._active .video-slider__item-video-wrapper {
@@ -263,6 +334,14 @@ body {
     background-repeat: no-repeat;
     margin-bottom: 10px;
     transform: scale(.75);
+    margin: 0 auto;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .video-slider__person-photo {
+        transform: scale(.5);
+    }
 }
 
 .video-slider__person-photo:hover:before,
