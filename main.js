@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     var playVideoBtns = document.querySelectorAll('.video-slider__item-btn'),
         peopleList = document.querySelector('.video-slider__people'),
-        persons = document.querySelectorAll('.video-slider__person'),
+        persons = document.querySelectorAll('.video-slider__person:not(._plus)'),
         sliders = document.querySelectorAll('.video-slider__item'),
         wrapper = document.querySelector('.video-slider'),
         videoIframes = document.querySelectorAll('.video-slider__item-video'),
