@@ -257,27 +257,6 @@ body {
     transition: transform .25s ease-in-out .2s;
 }
 
-.video-slider__people .video-slider__person:nth-child(1) .video-slider__person-photo {
-    background-position: 0 -2245px;
-}
-.video-slider__people .video-slider__person:nth-child(2) .video-slider__person-photo {
-    background-position: 0 -2485px;
-}
-.video-slider__people .video-slider__person:nth-child(3) .video-slider__person-photo {
-    background-image: none;
-}
-
-.video-slider__people .video-slider__person:nth-child(1) .video-slider__person-logo { 
-    background-position: 0 -2887px;
-    height: 21px;
-    width: 85px;
-}
-.video-slider__people .video-slider__person:nth-child(2) .video-slider__person-logo {
-    background-position: 0 -2962px;
-    height: 19px;
-    width: 23px;
-}
-
 .video-slider__person {
     cursor: pointer;
     margin: 0 3px;
@@ -295,8 +274,6 @@ body {
     border: 2px solid #fff;
     overflow: hidden;
     border-radius: 50%;
-    background-image: url('https://www.invisionapp.com/assets/img/sprites/home-sf40e21de30.png');
-    background-repeat: no-repeat;
     margin-bottom: 10px;
     transform: scale(.75);
     margin: 0 auto;
@@ -304,6 +281,9 @@ body {
 
 .video-slider__person-photo img {
     max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
 }
 
 
@@ -345,9 +325,11 @@ body {
 }
 
 .video-slider__person-logo {
-    background-image: url('https://www.invisionapp.com/assets/img/sprites/home-sf40e21de30.png');
-    background-repeat: no-repeat;
-    margin: 0 auto;
+    text-align: center;
+}
+
+.video-slider__person-logo img {
+    max-width: 80px;
 }
 
 .companies-logos {
@@ -376,26 +358,28 @@ body {
 .companies-logos__list {
     display: flex;
     flex-wrap: wrap;
-    margin: 0;
     list-style-type: none;
-    padding: 0; 
+    padding: 0;
+    margin: 0 20px;
 }
 
 .companies-logos__item {
-    width: calc(100% / 6);
-    flex-basis: calc(100% / 6);
-    max-width: calc(100% / 6);
-    min-width: calc(100% / 6);
-    padding: 1.875em 0;
+    display: flex;
+    align-items: center;
+    width: calc(100% / 5);
+    flex-basis: calc(100% / 5);
+    max-width: calc(100% / 5);
+    min-width: calc(100% / 5);
+    padding: 1.875em 2em;
     opacity: .8;
 }
 
 @media only screen and (max-width: 1024px) {
     .companies-logos__item {
-        width: calc(100% / 4);
-        flex-basis: calc(100% / 4);
-        max-width: calc(100% / 4);
-        min-width: calc(100% / 4);
+        width: calc(100% / 3);
+        flex-basis: calc(100% / 3);
+        max-width: calc(100% / 3);
+        min-width: calc(100% / 3);
     }
 }
 
@@ -405,84 +389,11 @@ body {
         flex-basis: calc(100% / 2);
         max-width: calc(100% / 2);
         min-width: calc(100% / 2);
+        padding: 1.875em .625em;
     }
 }
 
-.companies-logos__item span {
-    display: inline-block;
+.companies-logos__item img {
+    max-width: 100%;
     vertical-align: middle;
-    background-image: url('https://www.invisionapp.com/assets/img/sprites/home-sf40e21de30.png');
-    background-repeat: no-repeat;
-}
-
-.companies-logos__item:nth-child(1) span {
-    height: 29px;
-    width: 36px;
-    background-position: 0 -891px;
-}
-
-.companies-logos__item:nth-child(2) span {
-    height: 15px;
-    width: 74px;
-    background-position: 0 -940px;
-}
-
-.companies-logos__item:nth-child(3) span {
-    height: 26px;
-    width: 99px;
-    background-position: 0 -621px;
-}
-
-.companies-logos__item:nth-child(4) span {
-    height: 50px;
-    width: 72px;
-    background-position: 0 -667px;
-}
-
-.companies-logos__item:nth-child(5) span {
-    height: 34px;
-    width: 138px;
-    background-position: 0 -470px;
-}
-
-.companies-logos__item:nth-child(6) span {
-    height: 30px;
-    width: 103px;
-    background-position: 0 -737px;
-}
-
-.companies-logos__item:nth-child(7) span {
-    height: 29px;
-    width: 73px;
-    background-position: 0 -572px;
-}
-
-.companies-logos__item:nth-child(8) span {
-    width: 101px;
-    height: 19px;
-    background-position: 0 -787px;
-}
-
-.companies-logos__item:nth-child(9) span {
-    width: 101px;
-    height: 31px;
-    background-position: 0 -419px;
-}
-
-.companies-logos__item:nth-child(10) span {
-    height: 33px;
-    width: 140px;
-    background-position: 0 -975px;
-}
-
-.companies-logos__item:nth-child(11) span {
-    height: 45px;
-    width: 77px;
-    background-position: 0 -826px;
-}
-
-.companies-logos__item:nth-child(12) span {
-    height: 28px;
-    width: 71px;
-    background-position: 0 -524px;
 }
