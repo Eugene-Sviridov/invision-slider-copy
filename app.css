@@ -19,9 +19,15 @@ body {
     padding: 0;
     margin: 0;
     list-style-type: none;
-    padding-top: 56.5%;
-    /* height: 700px; */
+    height: 700px;
     overflow: hidden;
+}
+
+@media only screen and (max-width: 1244px) {
+    .video-slider__list {
+        padding-top: 56.2%;
+        height: auto;
+    }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -32,7 +38,6 @@ body {
 
 @media only screen and (max-width: 768px) {
     .video-slider__list {
-        /* height: 468px; */
         font-size: 10px;
     }
 }
@@ -418,7 +423,7 @@ body {
         flex-basis: calc(100% / 2);
         max-width: calc(100% / 2);
         min-width: calc(100% / 2);
-        padding: 1.875em .625em;
+        padding: 1.875em 1.625em;
     }
 }
 
